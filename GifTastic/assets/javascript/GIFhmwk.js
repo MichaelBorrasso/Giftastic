@@ -51,21 +51,23 @@ $("#add-topic").on("click", function(event) {
 
     var userTopic= $("#topic-input").val().trim();
 
-    topics.push(userTopic);
+    // topics.push(userTopic);
+    var buttons = $('<button>' + userTopic + '</button>');
+    buttons.appendTo('#topicButtons');
 
 
 
   });
 
-// $(".gif").on("click", function() {
-//     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
-//     var state = $(this).attr("data-state");
-      
+ $(document).on("click", ".gif", function(event) {
+    event.preventDefault();
+   var state = $(this).attr("data-state");
+      console.log($(this));
                          
-//              if (state === "still") {
-//                  $(this).attr("src", $(this).attr("data-animate"));
-//                  $(this).attr("data-state", "animate");
-//                } else {
-//                 $(this).attr("src", $(this).attr("data-still"));
-//                  $(this).attr("data-state", "still");
-            
+            //   if (state === "still") {
+            //                        $(this).attr("src", $(this).attr("data-animate"));
+            //       $(this).attr("data-state", "animate");
+            //     } else {
+            //      $(this).attr("src", $(this).attr("data-still"));
+            //     $(this).attr("data-state", "still");
+                });
